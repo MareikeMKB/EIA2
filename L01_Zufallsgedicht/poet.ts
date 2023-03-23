@@ -1,7 +1,7 @@
 namespace L01_Zufallsgedicht {
     let subjekte = ['Bellatrix', 'Andromeda', 'Narcissa', 'Sirius', 'Regulus', 'Kreacher'];
     let adjektive = ['foltert','liebt','bewundert','hasst','zerstört','freut sich auf'];
-    let objekte = ['Ted Tonks', 'den Dunklen Lord', 'Lucius', 'Remus', 'das Amulett Slytherins', 'Hogwarts'];
+    let objekte = ['Ted Tonks', 'den Dunklen Lord', 'Lucius', 'Remus', 'das Amulett Slytherins', 'Snape'];
 
     for (let i = 6; i > 0; i--) {
         let x:number = Math.floor(Math.random()*subjekte.length);
