@@ -9,9 +9,35 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <h1>Liste mit Aufgaben</h1>
-    <ul>
-        <li>Platzhalter1, 31.10.1981, 22:00 Uhr</li>
+    <h1>Task List</h1>
+    <div id="boxen">
+        <input type="text" placeholder="task">
+        <input type="text" placeholder="date">
+        <input type="text" placeholder="time">
+        <input type="text" placeholder="name">
+        <input type="text" placeholder="comment">
+    </div>
+    <div id="stuff">
+        <p id="p">in progress</p>
+        <button id="b">add new task</button>
+    </div>
+    <ul style="list-style-type:none">
+        <li>
+            <div>
+                <input type="checkbox" name="" id="">
+                <p>Platzhalter1, 31.10.1981, 22:00 Uhr, Lily, "Kommentar"</p>
+                <button>edit</button>
+                <button>done</button>
+            </div>
+        </li>
+        <li>
+            <div>
+                <input type="checkbox" name="" id="">
+                <p>Platzhalter2, 10.09.2012, 11:00 Uhr, Alix, "Kommentar"</p>
+                <button>edit</button>
+                <button>done</button>
+            </div>
+        </li>
     </ul>
 </body>
 </html>
