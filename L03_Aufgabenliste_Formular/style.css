@@ -39,6 +39,10 @@ button:hover {
     float:inline-end;
 }
 
+ul {
+    list-style-type:none;
+}
+
 /* Ich hab versucht. das CSS so nah wie möglich an das von der Zeichnung zu bringen
 aber der Code wollte nicht so wie ich... ich probiere es weiter bis zur nächsten Abgabe
 
