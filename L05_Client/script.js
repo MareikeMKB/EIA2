@@ -38,20 +38,13 @@ var L05_Client;
     edit.setAttribute("id", "edit");
     edit.innerHTML = "Edit";
     let wrap = document.querySelector("#wrapper");
-    window.addEventListener('load', handleLoad);
     function handleLoad(_event) {
         let submit = document.querySelector("#add2");
         submit.addEventListener("click", sendTask);
         setValue("Data.json");
     }
     ;
-    async function sendTask(_event) {
-        let formData = new FormData(form);
-        let query = new URLSearchParams(formData);
-        await fetch("main.html" + query.toString());
-        alert("Task Submited!");
-    }
-    ;
+    window.addEventListener('load', handleLoad);
     async function setValue(_url) {
         let response = await fetch(_url);
         let offer = await response.text();
@@ -61,6 +54,13 @@ var L05_Client;
         console.log("before" + offer);
         document.querySelector("#div1").innerHTML = "Task: " + offer;
     }
+    async function sendTask(_event) {
+        let formData = new FormData(form);
+        let query = new URLSearchParams(formData);
+        await fetch("main.html" + query.toString());
+        alert("Task Submited!");
+    }
+    ;
     document.querySelector("#add").addEventListener("click", function () {
         wrap.style.setProperty("visibility", "visible");
     });
@@ -74,7 +74,6 @@ var L05_Client;
         newP.appendChild(Delete);
         newP.appendChild(edit);
     });
-    // await 
     edit.addEventListener("click", async function () {
         wrap.style.setProperty("visibility", "visible");
     });
