@@ -12,17 +12,29 @@ namespace L06_DatabaseServer {
 
   let form: HTMLFormElement = document.querySelector("#form")!; 
 
-  interface Datainput  {
+  export interface Datainput  {
     [key: string]: Tasks[];
     }
 
-  interface Tasks {
+  export interface Tasks {
     taskname: string; 
     date: string; 
     comment: string; 
     person: string; 
     box: string; 
   }
+
+  interface FormDataJSON {
+    [key: string]: FormDataEntryValue | FormDataEntryValue[];}
+  
+  let formData1: FormData = new FormData(form);
+  let json: FormDataJSON = {};
+  
+  for (let key of formData1.keys())
+    if (!json[key]) {
+      let values: FormDataEntryValue[] = formData1.getAll(key);
+      json[key] = values.length > 1 ? values : values[0];
+    }
 
   function getData(): String[] {
     let taskArray: String[];
@@ -72,7 +84,10 @@ namespace L06_DatabaseServer {
   async function sendTask(_event: Event): Promise<void> { 
     let formData: FormData = new FormData(form);
     let query: URLSearchParams = new URLSearchParams(<any>formData);
-    await fetch("main.html" + query.toString()); 
+    query.set("command", "insert");
+    query.set("collection", "ToDoOne");
+    query.set("insert", "newtask" );
+    await fetch("https://webuser.hs-furtwangen.de/~bitzmare/Database/?" + query.toString());
     alert("Task Submited!");
   }
 
@@ -93,14 +108,28 @@ namespace L06_DatabaseServer {
 
   edit.addEventListener("click", async function () {
     wrap.style.setProperty("visibility", "visible");
+    deleteToDo();
+    let query: URLSearchParams = new URLSearchParams(<any>formData1);
+    query.set("update", "collection");
+    query.set("collection", "ToDoOne");
+    query.set("update", "id");
+    query.set("id", "?");
+    query.set("data", JSON.stringify(json));
+    alert("Youre editing the task.");
   });
 
-  Delete.addEventListener("click", async function () {
-    this!.parentNode!.parentNode!.removeChild(this!.parentNode!);
+  Delete.addEventListener("click", deleteToDo) 
+
+  async function deleteToDo() {
+    newdiv!.parentNode!.removeChild(newP);
     let formData: FormData = new FormData(form);
     let query: URLSearchParams = new URLSearchParams(<any>formData);
-    await fetch("main.html" + query.toString()); 
-  });
+    query.set("command", "delete");
+    query.set("collection", "ToDoOne");
+    query.set("delete", "id"); 
+    query.set("id", "?");
+    await fetch("https://webuser.hs-furtwangen.de/~bitzmare/Database/?" + query.toString());
+  };
 
 }
    

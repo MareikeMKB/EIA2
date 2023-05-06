@@ -11,6 +11,13 @@ var L06_DatabaseServer;
       */
     let taskArray1 = [];
     let form = document.querySelector("#form");
+    let formData1 = new FormData(form);
+    let json = {};
+    for (let key of formData1.keys())
+        if (!json[key]) {
+            let values = formData1.getAll(key);
+            json[key] = values.length > 1 ? values : values[0];
+        }
     function getData() {
         let taskArray;
         let formData = new FormData(form);
@@ -54,7 +61,10 @@ var L06_DatabaseServer;
     async function sendTask(_event) {
         let formData = new FormData(form);
         let query = new URLSearchParams(formData);
-        await fetch("main.html" + query.toString());
+        query.set("command", "insert");
+        query.set("collection", "ToDoOne");
+        query.set("insert", "newtask");
+        await fetch("https://webuser.hs-furtwangen.de/~bitzmare/Database/?" + query.toString());
         alert("Task Submited!");
     }
     document.querySelector("#add").addEventListener("click", function () {
@@ -72,12 +82,26 @@ var L06_DatabaseServer;
     });
     edit.addEventListener("click", async function () {
         wrap.style.setProperty("visibility", "visible");
+        deleteToDo();
+        let query = new URLSearchParams(formData1);
+        query.set("update", "collection");
+        query.set("collection", "ToDoOne");
+        query.set("update", "id");
+        query.set("id", "?");
+        query.set("data", JSON.stringify(json));
+        alert("Youre editing the task.");
     });
-    Delete.addEventListener("click", async function () {
-        this.parentNode.parentNode.removeChild(this.parentNode);
+    Delete.addEventListener("click", deleteToDo);
+    async function deleteToDo() {
+        newdiv.parentNode.removeChild(newP);
         let formData = new FormData(form);
         let query = new URLSearchParams(formData);
-        await fetch("main.html" + query.toString());
-    });
+        query.set("command", "delete");
+        query.set("collection", "ToDoOne");
+        query.set("delete", "id");
+        query.set("id", "?");
+        await fetch("https://webuser.hs-furtwangen.de/~bitzmare/Database/?" + query.toString());
+    }
+    ;
 })(L06_DatabaseServer || (L06_DatabaseServer = {}));
 //# sourceMappingURL=script.js.map
