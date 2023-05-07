@@ -5,7 +5,7 @@ namespace L06_DatabaseServer {
     Name: <Mareike Bitz>
     Matrikel: <272506>
     Datum: <04.05.23>
-    Quellen: <>
+    Quellen: <Madeleine Hansen>
     */
 
   let taskArray1: String[] = [];
