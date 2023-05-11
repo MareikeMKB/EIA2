@@ -48,7 +48,7 @@ var L08_GenerativeKunst;
         for (let i = 0; i < t + 1; i++) {
             drawLine({ x: 500, y: 125 }, { x: 1000, y: -500 });
         }
-        arc({ x: 200, y: 100 }, { x: 800, y: -500 });
+        drawArc({ x: 500, y: 200 }, { x: 1000, y: -500 });
     }
     function getRandInt(_max, _min = 0) {
         return Math.floor(Math.random() * _max) + _min;
@@ -114,12 +114,13 @@ var L08_GenerativeKunst;
         crc2.stroke();
         crc2.closePath();
     }
-    function arc(_position, _size) {
+    function drawArc(_position, _size) {
         crc2.beginPath();
         crc2.arc(getRandInt(500), getRandInt(500), getRandInt(100), getRandInt(10), 3 * Math.PI);
         crc2.lineWidth = getRandInt(10, 1);
         crc2.closePath();
         crc2.stroke();
+        //Ob es da ist oder nicht ist ein Rätsel, mal taucht es auf, Mal nicht
     }
 })(L08_GenerativeKunst || (L08_GenerativeKunst = {}));
 //# sourceMappingURL=script.js.map
