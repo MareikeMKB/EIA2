@@ -20,8 +20,8 @@ var L08_Luftfahrt;
         console.log("TestLoad");
         let horizon = crc2.canvas.height * gold;
         drawBackground();
-        drawMountains({ x: horizon, y: 70 });
         drawSun({ x: 95, y: 70 });
+        drawMountains({ x: horizon, y: 70 });
         drawCloud({ x: 500, y: 175 }, { x: 250, y: 75 });
     }
     function drawBackground() {
