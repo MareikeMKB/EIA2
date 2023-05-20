@@ -1,20 +1,4 @@
-@media only screen and (max-width: 600px) {
-    canvas {
-        width: 600px;
-        height: 1000px;
-    }
+canvas {
+    width: 900px;
+    height: 600px;
 }
-
-@media only screen and (min-width: 768px) {
-    canvas {
-        width: 1000px;
-        height: 1500px;
-    }
-} 
-
-@media only screen and (min-width: 1200px) {
-    canvas {
-        width: 1200px;
-        height: 1700px;
-    }
-} 
