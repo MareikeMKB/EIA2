@@ -1,0 +1,29 @@
+body {
+    background-color: rgb(131, 203, 179);
+    margin-left: 20px;
+    width: 600px;
+}
+
+h1{
+    margin-left: 20px;
+}
+
+
+input[type="checkbox"] {
+    width: 25px;                       
+    height: 25px;                        
+    clip-path: circle(46% at 50% 50%);  
+  }
+#add{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+div{
+    background-color: rgb(189, 222, 222);
+    padding: 1px;
+    border: solid rgb(153, 183, 183);
+}
+
+
+

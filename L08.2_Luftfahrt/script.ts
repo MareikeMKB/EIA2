@@ -81,7 +81,7 @@ namespace L08_Luftfahrt {
         crc2.closePath();
         crc2.fillStyle = '#d9ddde';
         crc2.fill();
-        console.log("Mountainsarethere")
+        console.log("Mountainsarethere");
     }
 
     function drawSun(_position: Vector): void {
