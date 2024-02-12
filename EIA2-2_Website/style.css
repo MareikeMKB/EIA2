@@ -1,7 +1,7 @@
 body {
-    background-color: rgb(131, 203, 179);
+    background-color: rgb(88, 128, 201);
     margin-left: 20px;
-    width: 600px;
+    width: 300px;
 }
 
 h1{
@@ -9,20 +9,10 @@ h1{
 }
 
 
-input[type="checkbox"] {
-    width: 25px;                       
-    height: 25px;                        
-    clip-path: circle(46% at 50% 50%);  
-  }
-#add{
-    margin-left: 20px;
-    margin-top: 20px;
-}
-
 div{
-    background-color: rgb(189, 222, 222);
+    background-color: rgb(156, 186, 230);
     padding: 1px;
-    border: solid rgb(153, 183, 183);
+    border: solid rgb(51, 113, 75);
 }
 
 
