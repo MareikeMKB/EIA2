@@ -8,6 +8,9 @@ h1{
     margin-left: 20px;
 }
 
+img {
+    border: solid rgb(55, 51, 113);
+}
 
 div{
     background-color: rgb(156, 186, 230);
@@ -15,5 +18,15 @@ div{
     border: solid rgb(51, 113, 75);
 }
 
+#stuff, #moreStuff
+{
+    border: none;
+    background-color: rgb(132, 171, 231);
+    padding-left: 10px;
+}
+
+#stuff {
+    font-size: 20px;
+}
 
 
