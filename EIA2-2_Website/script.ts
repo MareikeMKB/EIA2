@@ -2,7 +2,7 @@ namespace Website {
     console.log('Hallo');
 
     let answers = ['#a1','#a2','#a3', '#a4'];
-    let codes = ['Code1','Code2', 'Code3', 'Code4'];
+    let codes = ['AF601','KX749', 'BL326', 'HP476'];
 
     document.getElementById("stuff")!.style.setProperty("visibility", "hidden");
 
